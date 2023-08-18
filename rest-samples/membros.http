@@ -1,0 +1,22 @@
+
+# @name createMembro
+POST http://localhost:8080/membro/create
+Content-Type: application/json
+
+{
+"nome_pessoa":"Arthur Araújo Oliveira" ,
+"cargo_pessoa": "Dev-Senior",
+"funcionario": true
+}
+
+##########
+
+# @name vincularMembroProjeto
+POST http://localhost:8080/membro/vincularMembroProjeto
+Content-Type: application/json
+
+{
+"id_projeto":1,
+"id_membro":1
+}
+

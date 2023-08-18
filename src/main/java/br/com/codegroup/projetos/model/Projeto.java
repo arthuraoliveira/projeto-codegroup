@@ -1,0 +1,55 @@
+package br.com.codegroup.projetos.model;
+
+import java.time.OffsetDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Projeto {
+
+	@Id
+	@Column(name = "ID")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
+	private Long id;
+	
+	private String nome;
+
+	private OffsetDateTime dataInicio;
+	
+	private OffsetDateTime dataPrevisao;
+	
+	private OffsetDateTime dataFim;
+	
+	private String descricao;
+	
+	private String status;
+	
+	private Double orcamento;
+	
+	private String risco;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_gerente")
+	private Pessoa gerente;
+}

@@ -1,0 +1,59 @@
+
+# @name createProjeto
+POST http://localhost:8080/projeto/create
+Content-Type: application/json
+
+{
+    "nome":"projeto empresa 5" ,
+    "data_inicio": "2023-08-18T09:48:30.174Z",
+    "data_previsao_termino": "2023-08-20T09:48:30.174Z",
+    "data_real_termino": "2023-08-22T09:48:30.174Z",
+    "descricao": "O projeto foi criado somente para a prova",
+    "status": "planejado",
+    "orcamento_total": 15.000,
+    "risco": "baixo",
+    "gerente_responsavel": {
+        "id_pessoa": "",
+        "nome": "Arthur Araújo Oliveira"
+    }
+}
+
+##########
+
+# @name updateProjeto
+PUT http://localhost:8080/projeto/update
+Content-Type: application/json
+
+{
+    "id_projeto":1,
+    "nome":"projeto empresa teste" ,
+    "data_inicio": "2023-08-19T09:48:30.174Z",
+    "data_previsao_termino": "2023-08-23T09:48:30.174Z",
+    "data_real_termino": "2023-08-25T09:48:30.174Z",
+    "descricao": "O projeto foi criado somente para a prova alterar",
+    "status": "planejado",
+    "orcamento_total": 15000,
+    "risco": "medio",
+    "gerente_responsavel": {
+        "id_pessoa": 1,
+        "nome": "Arthur Araújo Oliveira"
+    }
+}
+
+##########
+
+# @name findByIdProjeto
+GET http://localhost:8080/projeto/findById/1
+Content-Type: application/json
+
+##########
+
+# @name findAllProjeto
+GET http://localhost:8080/projeto/findAll
+Content-Type: application/json
+
+##########
+
+# @name deleteProjeto
+DELETE  http://localhost:8080/projeto/delete/1
+Content-Type: application/json
